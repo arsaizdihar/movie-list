@@ -8,7 +8,7 @@ window.onload = () => {
         .then((data) => {
             data.results.forEach((movie) => {
                 const card = document.createElement("a");
-                card.href = `/movie.html?id=${movie.id}`;
+                card.href = `movie?id=${movie.id}`;
                 card.classList.add("card");
 
                 const title = document.createElement("h3");
