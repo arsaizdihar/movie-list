@@ -1,6 +1,14 @@
+
+
 body {
     font-family: "Poppins", sans-serif;
     background: black;
+    position: relative;
+}
+
+.overlay-active {
+    overflow: hidden;
+    padding-right: 19px;
 }
 
 .title {
@@ -8,7 +16,7 @@ body {
 }
 
 .poster {
-    width: 300px;
+    width: 100%;
     border-radius: 5px;
     border: 1px solid rgba(139, 14, 14, 0.993);
 }
@@ -28,19 +36,42 @@ body {
     flex-wrap: wrap;
 }
 
+.card-container {
+    position: relative;
+}
+
 .card {
     display: block;
     width: 300px;
-    background: #b63c3c;
+    background: #B81d24;
+    box-sizing: border-box;
     padding: 1rem;
     border-radius: 0.5rem;
     margin: 1rem;
-
+    cursor: pointer;
     text-decoration: none;
+    
+    transition: all 0.5s;
+    border: none;
 }
 
+
+
+.glow {
+    position: absolute;
+    top: 0.6rem;
+    right: 0.6rem;
+    bottom: 0.6rem;
+    left: 0.6rem;
+    background-color: rgb(122, 122, 113);
+    filter: blur(8px);
+    z-index: -1;
+}
+
+
 .card:hover {
-    background: #af5959;
+    transform: scale(110%);
+    background: #E50914;
 }
 
 .movie-title {
@@ -59,10 +90,14 @@ body {
 }
 
 .rating {
-    text-align: center;
+    padding: 0.5rem;
+    display: inline-block;
+    border-radius: 2px;
+    min-width: 20px;
+    background-color: rgba(0, 0, 0, 0.6);
     font-size: 1rem;
     font-weight: bold;
-    color: #ffe02f;
+    color: #cbce1c;
     margin: 0.5rem 0;
 }
 
@@ -74,7 +109,63 @@ body {
         width: 400px;
     }
 
-    .poster {
-        width: 400px;
-    }
+}
+.overlay {
+    background:rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.hidden {
+    display: none;
+}
+
+.movie-detail-container {
+    width: 100%;
+    padding: 0 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.movie-detail {
+    background-color: #B81d24;
+    border-radius: 5px;
+    width: 100%;
+    text-align: center;
+    max-width: 32rem;
+    color: black;
+    padding: 1rem;
+    margin: 0 1rem;
+
+}
+
+.detail-title {
+    text-align: center;
+    margin: 0;
+}
+
+.detail-description {
+    text-align: justify;
+    background-color: #E50914;
+    padding: 0.25rem;
+    color: white;
+}
+
+.detail-close {
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    border-radius: 5px;
+    background-color: black;
+    border: none;
+    padding: 0.25rem 0.5rem;
+    color: white;
 }
